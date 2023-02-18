@@ -52,3 +52,45 @@ const hello = function (): void {
   console.log("hello world")
 }
 const h: void = hello() // ts는 js와 달리 함수가 return 값이 없을 경우 void 타입을 리턴한다.
+
+/// Any
+let thisIsAny: any = "123"
+thisIsAny = 123
+thisIsAny = false // any 타입은 아무 타입의 데이터를 할당할 수 있다.
+
+/// Unknown
+//// any 타입보다 좀 더 엄격하게 unknown 타입을 사용하자.
+const u: unknown = 123
+
+/// Tuple
+/// 반드시 타입의 개수, 위치와 동일하게 데이터가 들어와야 한다.
+const tuple: [string, number, boolean] = ['a', 1, true]
+
+/// Void
+//// 리턴 타입을 명시하지 않은 함수에서 반환되는 타입
+
+/// Never 절대 발생하지 않을 값을 의미.
+//// 아래는 배열 내부에 타입을 지정할 수 없으므로 Never 타입 에러가 발생한다.
+const nev: [] = []
+// nev.push(3)
+
+/// Union
+let unionType: string | number | boolean
+unionType = "123"
+unionType = 123
+unionType = true
+
+/// Intersection
+interface person {
+  name: string,
+  age: number
+}
+interface validation {
+  isValid: boolean
+}
+//// 여러 인터페이스를 합쳐서 사용하는 것을 인터섹션이라고 한다.
+const lee: User & validation = { // 만약 모든 인터페이스의 속성이 선언되어있지 않으면 에러가 발생한다.
+  name: "lee",
+  age: 12,
+  isValid: true
+}
