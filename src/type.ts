@@ -103,7 +103,7 @@ let num = 123 // 변수 num의 타입은 number로 초기화
 // num = "hello" 에러 발생
 
 // 2) 기본값이 설정된 매개 변수, 3) 반환 값이 있는 함수
-function add1(a: number, b = 2) {
+function addd(a: number, b = 2) {
   return a + b
 }
 
