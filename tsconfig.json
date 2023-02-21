@@ -1,15 +1,28 @@
 {
+  // 컴파일러 옵션 지정
   "compilerOptions": {
+    // 컴파일 될 JS 버전 명시 - "ES2015 권장"
     "target": "ES2015",
+    // 모듈 시스템 지정, 노드JS -> CommonJS, 브라우저 -> ESNext
     "module": "ESNext",
+    // 모듈 해석 방식 지정
     "moduleResolution": "Node",
+    // ESM 모듈 방식 호환성 활성화 여부
+    /// CommonJS 의 경우 export default 등 기본 내보내기 없음.
+    /// module.exports 의 예전 방식 사용
+    /// true로 설정할 경우 호환성 고민 필요 없이 두 방법 다 사용 가능.
     "esModuleInterop": true,
+    // 컴파일에 사용할 라이브러리 지정
     "lib": ["ESNext", "DOM"],
+    // 더 엄격한 타입 검사 활성화
+    /// 해당 옵션만 활성화 하면 기타 검사 옵션들이 자동 활성화
     "strict": true
   },
+  // 컴파일할 파일 경로 목록
   "include": [
     "src/**/*.ts"
   ],
+  // 컴파일에서 제외할 파일 경로 목록
   "exclude": [
     "node_modules"
   ]
