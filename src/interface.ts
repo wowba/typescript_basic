@@ -28,7 +28,8 @@ interface GetName {
 interface NewUser {
   name: string
   age: number
-  getName: GetName
+  // getName: GetName
+  getName: (message: string) => string
 }
 const newUser: NewUser = {
   name: "lee",
